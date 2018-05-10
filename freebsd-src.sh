@@ -21,7 +21,7 @@ for i in $REPOS; do
         if [ ! -d "$DIR/$i/.svn" ]; then
                 svnlite checkout https://svn.freebsd.org/$i/ $DIR/$i/
 	else
-		svnlite update https://svn.freebsd.org/$i/ $DIR/$i/
+		svnlite update $DIR/$i/
 	fi
 done
 
