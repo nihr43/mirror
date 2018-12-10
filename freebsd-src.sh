@@ -2,9 +2,7 @@
 #
 # create local copies of freebsd source code via svn
 
-if [ -f "/var/mirror_update.lock" ]; then
-	exit 1
-fi
+[ -f "/var/mirror_update.lock" ] && exit 1
 
 touch /var/freebsd-src_update.lock
 
