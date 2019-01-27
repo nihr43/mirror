@@ -10,17 +10,17 @@ DIR='/usr/src'
 REPOS='base' #csrg doc ports socsvn'
 
 for i in $REPOS; do
-	if [ ! -d "$DIR/$i" ]; then
-		mkdir $DIR/$i
-	fi
+  [ -d "$DIR/$i" ] || {
+    mkdir $DIR/$i
+  }
 done
 
 for i in $REPOS; do
-        if [ ! -d "$DIR/$i/.svn" ]; then
-                svnlite checkout https://svn.freebsd.org/$i/ $DIR/$i/
-	else
-		svnlite update $DIR/$i/
-	fi
+  [ -d "$DIR/$i/.svn" ] || {
+    svnlite checkout https://svn.freebsd.org/$i/ $DIR/$i/
+  else
+    svnlite update $DIR/$i/
+  }
 done
 
 rm /var/freebsd-src_update.lock
