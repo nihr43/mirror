@@ -18,7 +18,8 @@ done
 for i in $REPOS; do
   [ -d "$DIR/$i/.svn" ] || {
     svnlite checkout https://svn.freebsd.org/$i/ $DIR/$i/
-  else
+  } && {
+    svnlite cleanup $DIR/$i/
     svnlite update $DIR/$i/
   }
 done
