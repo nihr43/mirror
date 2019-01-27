@@ -2,6 +2,8 @@
 #
 # create local copies of freebsd source code via svn
 
+sleep `jot -r 1 0 14400`
+
 [ -f "/var/mirror_update.lock" ] && exit 1
 
 touch /var/freebsd-src_update.lock
