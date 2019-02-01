@@ -2,7 +2,7 @@
 #
 # create local copies of freebsd source code via svn
 
-sleep `jot -r 1 0 14400`
+[ "$1" == "now" ] || sleep `jot -r 1 0 3600`
 
 [ -f "/var/mirror_update.lock" ] && exit 1
 
