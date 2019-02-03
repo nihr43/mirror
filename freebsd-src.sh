@@ -7,6 +7,7 @@
 [ -f "/var/mirror_update.lock" ] && exit 1
 
 touch /var/freebsd-src_update.lock
+logger "Updating source"
 
 DIR='/usr/src'
 REPOS='base/head base/release base/stable' #csrg doc ports socsvn'
