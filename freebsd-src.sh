@@ -9,11 +9,11 @@
 touch /var/freebsd-src_update.lock
 
 DIR='/usr/src'
-REPOS='base' #csrg doc ports socsvn'
+REPOS='base/head base/release base/stable' #csrg doc ports socsvn'
 
 for i in $REPOS; do
   [ -d "$DIR/$i" ] || {
-    mkdir $DIR/$i
+    mkdir -p  $DIR/$i
   }
 done
 
